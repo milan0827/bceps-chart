@@ -1,19 +1,19 @@
 import { CodegenConfig } from "@graphql-codegen/cli";
+import * as path from "path";
 
 const config: CodegenConfig = {
   schema: "https://countries.trevorblades.com/graphql",
   // this assumes that all your source files are in a top-level `src/` directory - you might need to adjust this to your file structure
-  documents: ["src/**/*.{ts,tsx}"],
+  documents: path.join(__dirname, "/**/*.graphql/"),
   generates: {
-    "./src/__generated__/": {
-      preset: "client",
-      plugins: [],
-      presetConfig: {
-        gqlTagName: "gql",
-      },
+    [path.join(__dirname, "./src/graphql/generated/graphql.ts")]: {
+      plugins: [
+        "typescript",
+        "typescript-operations",
+        "typescript-react-apollo",
+      ],
     },
   },
-  ignoreNoDocuments: true,
 };
 
 export default config;
