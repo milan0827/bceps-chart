@@ -1,0 +1,15 @@
+query Continent {
+  continents {
+    code
+    name
+    countries {
+      code
+      currency
+      name
+      phone
+      languages {
+        name
+      }
+    }
+  }
+}

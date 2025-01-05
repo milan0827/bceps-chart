@@ -1,10 +1,12 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 
-const createApolloClient = () => {
-  return new ApolloClient({
+const apolloClient = new ApolloClient({
+  ssrMode: true,
+  link: new HttpLink({
     uri: "https://countries.trevorblades.com",
-    cache: new InMemoryCache(),
-  });
-};
+    fetch,
+  }),
+  cache: new InMemoryCache(),
+});
 
-export default createApolloClient;
+export default apolloClient;
