@@ -28,7 +28,12 @@ const graphOption = [
   },
 ];
 
-const getPath = (x: number, y: number, width: number, height: number) => {
+const getPath = (
+  x: number | any,
+  y: number | any,
+  width: number | any,
+  height: number | any
+) => {
   return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
     y + height / 3
   }

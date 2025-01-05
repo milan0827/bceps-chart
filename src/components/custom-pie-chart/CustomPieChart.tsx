@@ -82,14 +82,14 @@ const CustomPieChart = <T,>({
           fill="#8884d8"
           dataKey={dataKey}
         >
-          {data.map((entry, index) => (
+          {data.map((entry: any, index) => (
             <Cell
               key={`cell-${index}`}
               fill={COLORS[index % COLORS.length]}
               onClick={() => {
-                entry.code
-                  ? router.push(`continent-detail/${entry.code}`)
-                  : null;
+                if (entry.code) {
+                  router.push(`continent-detail/${entry.code}`);
+                }
 
                 console.log("Clicked", entry.code);
               }}

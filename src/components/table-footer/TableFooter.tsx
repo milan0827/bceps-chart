@@ -17,7 +17,6 @@ const TableFooter = ({
   onNext,
   data,
 }: TableFooterProps) => {
-  console.log("endNo", endNo, data?.countries.length);
   return (
     <div className="flex w-full justify-end gap-2 mt-2">
       {startNo < 10 ? null : (
