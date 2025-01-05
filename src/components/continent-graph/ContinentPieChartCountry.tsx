@@ -27,7 +27,7 @@ const ContinentPieChartCountry = async () => {
   return (
     <div className="mt-6">
       <h2 className="text-gray-400 text-xl font-semibold">
-        Pie chart of continents with total country no.
+        Pie chart of continents with total no. of country
       </h2>
       <CustomPieChart data={continents} dataKey="countryCount" />
     </div>

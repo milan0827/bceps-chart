@@ -18,9 +18,9 @@ const ContinentBarGraph = async () => {
 
   const continents = continentData?.continents?.map((continent) => ({
     name: continent.name,
-    countryCount: continent.countries.length,
+    country: continent.countries.length,
     code: continent.code,
-    languageCount: continent.countries.reduce(
+    language: continent.countries.reduce(
       (total, country) => total + country.languages.length,
       0
     ),
@@ -38,8 +38,8 @@ const ContinentBarGraph = async () => {
       <CustomBarGraph
         data={continents}
         dataKey="name"
-        bar1DataKey="countryCount"
-        bar2DataKey="languageCount"
+        bar2DataKey="country"
+        bar1DataKey="language"
       />
     </div>
   );

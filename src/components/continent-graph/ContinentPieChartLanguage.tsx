@@ -32,7 +32,7 @@ const ContinentPieChartLanguage = async () => {
   return (
     <div className="mt-6">
       <h2 className="text-gray-400 text-xl font-semibold">
-        Pie chart of continents with the total language.
+        Pie chart of continents with the total no. of language.
       </h2>
       <CustomPieChart data={continents} dataKey="languageCount" />
     </div>

@@ -16,8 +16,8 @@ const Button = forwardRef(
     return (
       <button
         className={`${buttonStyle[variant]}`}
-        {...props}
         ref={ref as never}
+        {...props}
       >
         {label}
       </button>

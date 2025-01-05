@@ -42,14 +42,7 @@ const getPath = (x: number, y: number, width: number, height: number) => {
 const TriangleBar = (props: React.ComponentProps<"path">) => {
   const { fill, x, y, width, height } = props;
 
-  return (
-    <path
-      d={getPath(x, y, width, height)}
-      stroke="none"
-      fill={fill}
-      {...props}
-    />
-  );
+  return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
 const CustomBarGraph = <T,>({
@@ -68,7 +61,7 @@ const CustomBarGraph = <T,>({
 
   return (
     <>
-      <div>
+      <div className="w-full flex justify-end items-center pr-10 gap-4">
         Choose Graph
         <select
           className="bg-gray-700 text-gray-300 self-start px-2 py-1 rounded-md"
